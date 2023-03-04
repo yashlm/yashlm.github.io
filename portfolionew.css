@@ -11,6 +11,10 @@
     cursor: text;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /* background: #080808; */
     color: white;
@@ -147,10 +151,15 @@ nav .fa-solid {
 
 .textcol h1+p {
     padding-top: 20px;
-    font-size: 20px;
+    font-size: 18px;
     /* text-align: center; */
     /* line-height: 1.2;
     letter-spacing: 1.2; */
+}
+
+.mobile {
+    background-color: #06d1e0;
+    color: #06d1e0;
 }
 
 .tabtitles {
@@ -288,17 +297,24 @@ form textarea {
 }
 
 form .btn {
-    display: flex;
+    /* display: flex; */
     background-color: #06d1e0;
     color: #080808;
-    padding: 14px 30px;
+    padding: 12px 25px;
     border-radius: 10px;
     margin-top: 8px;
     cursor: pointer;
+    /* justify-content: center; */
     font-weight: 600;
-    margin-right: 50%;
+    margin-right: 0%;
     font-size: 20px;
-    transition: transform 0.5s;
+    transition: transform 0.25s;
+}
+
+#msg {
+    color: #06d1e0;
+    margin-left: 22%;
+    font-size: 20px;
 }
 
 .contactleft h1 {
@@ -387,6 +403,7 @@ footer span {
         margin-top: 5px;
         margin-bottom: 40px;
     }
+
     .contactleft h1 {
         margin-bottom: 40px;
     }
@@ -423,5 +440,10 @@ footer span {
         top: 25px;
         left: 25px;
         cursor: pointer;
+    }
+
+    #msg {
+        font-size: 14px;
+        margin-left: 5%;
     }
 }

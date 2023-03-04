@@ -46,11 +46,13 @@
             </section>
             <section class="textcol">
                 <h1 class="subtitle">About Me</h1>
-                <p>I'm Yash and I am currently a BS Physics first-year undergraduate at Indian Institute of Technology,
-                    Kanpur. I'm quite proficient with utilities like Git, Github, HTML5 and CSS3. I can code
-                    in Java, C and Python well. I'm currently learning full-stack web development from the Web
-                    Development Bootcamp by Colt Steele. I'm also doing a course on Data Science with Python by
-                    coincent. My interests include Web3, Web and App development, Machine Learning and Data Science.</p>
+                <p>I am a BS Physics first-year undergraduate at the Indian Institute of Technology, Kanpur. I'm
+                    proficient with utilities like Git, Github, HTML5, and CSS3. I can code in Java, C, and Python well.
+                    I'm currently learning full-stack web development from the Web Development Bootcamp by Colt Steele.
+                    I'm also doing a course on Data Science with Python by coincent. My interests include Web3, Web and
+                    App development, Machine Learning, and Data Science. My other interests apart from programming
+                    include football, music, and international relations. I have made this website as a recruitment task
+                    for the web and app vertical in Techkriti as a Junior Executive.</p>
                 <section class="tabtitles">
                     <p class="tablinks activelink" onclick="opentab('skills')">Skills</p>
                     <p class="tablinks" onclick="opentab('experience')">Experience</p>
@@ -59,7 +61,7 @@
                 <section class="tabcontents activetab" id="skills">
                     <ul>
                         <li><span>Coding</span><br>Java, C, Python</li>
-                        <li><span>Web Development</span><br>HTML5, CSS3, Bootstrap, Javascript</li>
+                        <li><span>Web Development</span><br>HTML5, CSS3</li>
                         <li><span>Utilites</span><br>Git, Github</li>
                     </ul>
                 </section>
@@ -93,7 +95,7 @@
                         yashlm1017@gmail.com</a></p>
                 <p><a href="mailto:yashc22@iitk.ac.in"><i class="fa-sharp fa-solid fa-envelope"></i>
                         yashc22@iitk.ac.in</a></p>
-                <p><i class="fa-sharp fa-solid fa-phone"></i> 9837090171</p>
+                <p><i class="fa-sharp fa-solid fa-phone"></i> <span class="mobile">9837090171</span></p>
                 <section class="socialicons">
                     <a href="https://www.instagram.com/_yashh20/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=100006151927034"><i
@@ -106,35 +108,37 @@
                 <!-- <a href="">Click Me!</a> -->
             </section>
             <section class="contactright">
-                <form action="chillhai">
+                <form action="chillhai" name="submit-to-google-sheet">
                     <div>
                         <!-- <label for="name">Name:</label> -->
-                        <input class="formwidth" type="text" placeholder="Enter your name" id="name" name="name"
+                        <input class="formwidth" type="text" placeholder="Enter your name" id="name" name="Name"
                             required>
                     </div>
                     <br>
 
                     <div>
                         <!-- <label for="email">Email:</label> -->
-                        <input class="formwidth" type="email" placeholder="Enter your email" id="email" name="email"
+                        <input class="formwidth" type="email" placeholder="Enter your email" id="email" name="Email"
                             required>
                     </div>
                     <br>
 
                     <div>
                         <!-- <label for="message" id="message">Message:</label> -->
-                        <textarea placeholder="Enter your message" id="message" name="message" rows="6"></textarea>
+                        <textarea placeholder="Enter your message" id="message" name="Message" rows="6"></textarea>
                     </div>
                     <br>
 
                     <span>
                         <button class="btn">Submit!</button>
                     </span>
+                    <span id="msg"></span>
                 </form>
+
             </section>
         </section>
         <footer>
-            <p>Copyright &#169; 2023 <br> All Rights <span>Reserved</span></p>
+            <p>Copyright &#169; 2023 <br> <span>All Rights Reserved</span> <br>(Work section hasn't been added yet)</p>
         </footer>
     </section>
     <script>
@@ -156,14 +160,37 @@
 
         var sidemenu = document.getElementById("sidemenu");
 
-        function openmenu(){
-            sidemenu.style.right="0";
-        }
-        
-        function closemenu(){
-            sidemenu.style.right="-150px";
+        function openmenu() {
+            sidemenu.style.right = "0";
         }
 
+        function closemenu() {
+            sidemenu.style.right = "-150px";
+        }
+
+    </script>
+    <!-- <form name="submit-to-google-sheet">
+        <input name="email" type="email" placeholder="Email" required>
+        <button type="submit">Send</button>
+      </form> -->
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx-tZn8RAeH68Z6oeOs2knhMn8R20rpN6VpNvjDXdqo_QtHPMWeSkZU3MS3gfoXrYIb_g/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message has been sent!"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 </body>
 
