@@ -445,7 +445,11 @@ footer span {
         display: flex;
     }
 
-    /* #msg {
-        font-size: 18px;
-    } */
+    #msg {
+        /* font-size: 18px; */
+        margin-left: 0%;
+        margin-top: 4%;
+        display: block;
+        text-align: center;
+    }
 }
