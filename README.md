@@ -1,2 +1,2 @@
-# yashlm.github.io
-Portfolio Website
+# Portfolio Website
+Link to the website: https://yashlm.github.io/
